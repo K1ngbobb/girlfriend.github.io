@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lorallaine, Will You Be My Girlfriend?</title>
+    <style>
+        body {
+            background-color: #FF69B4; /* Bright pink background */
+            text-align: center;
+            font-family: 'Arial', sans-serif;
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        h1 {
+            color: white;
+            font-size: 28px;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+        }
+        .btn {
+            padding: 15px 30px;
+            font-size: 18px;
+            margin: 12px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: bold;
+        }
+        #yesBtn {
+            background-color: #C71585; /* Dark pink */
+            color: white;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        #noBtn {
+            background-color: #C71585; /* Dark pink */
+            color: white;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        #maybeBtn {
+            background-color: #C71585; /* Dark pink */
+            color: white;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        #result {
+            margin: 20px 0;
+            flex-grow: 1;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 15px;
+            margin-top: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        audio {
+            display: none;
+        }
+        footer {
+            margin-top: auto;
+            padding: 20px;
+            color: white;
+            font-size: 14px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+        .heart {
+            color: white;
+            font-size: 22px;
+            text-shadow: 0 0 5px #FF1493;
+        }
+        #buttons {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Lorallaine, will you be my girlfriend? <span class="heart">❤️</span></h1>
+    
+    <div id="buttons">
+        <button id="yesBtn" class="btn" onclick="handleAnswer('yes')">YES!</button>
+        <button id="noBtn" class="btn" onclick="handleAnswer('no')">NO</button>
+        <button id="maybeBtn" class="btn" onclick="handleAnswer('maybe')">MAYBE</button>
+    </div>
+    
+    <div id="result"></div>
+    
+    <audio id="loveSong" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"></audio>
+    
+    <footer>
+        <p>I spent weeks on this <span class="heart">😭❤️</span></p>
+        <p>Made by Jacob with love</p>
+    </footer>
+    
+    <script>
+        function handleAnswer(answer) {
+            const resultDiv = document.getElementById('result');
+            const loveSong = document.getElementById('loveSong');
+            const buttonsDiv = document.getElementById('buttons');
+            
+            resultDiv.innerHTML = '';
+            
+            if (answer === 'yes') {
+                buttonsDiv.style.display = 'none';
+                resultDiv.innerHTML = `
+                    <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExcDl3b2l1N3R1b2V5dG5tZXF2dWl2eGJ0Z3JmZzV5dGJqYjB1eXJzbiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3oriO0OEd9QIDdllqo/giphy.gif" alt="Happy couple">
+                    <h2 style="color:white; text-shadow: 1px 1px 3px rgba(0,0,0,0.3);">You've made me the happiest man alive! <span class="heart">❤️</span></h2>
+                `;
+                loveSong.play();
+                setTimeout(() => {
+                    window.location.href = "https://i.pinimg.com/originals/1b/6b/42/1b6b42bdfa9a3b1a7a6a8a8a8a8a8a8a.jpg";
+                }, 6000);
+            } 
+            else if (answer === 'no') {
+                resultDiv.innerHTML = `
+                    <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExcDl3b2l1N3R1b2V5dG5tZXF2dWl2eGJ0Z3JmZzV5dGJqYjB1eXJzbiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3o7aTskHEUdgCQAXde/giphy.gif" alt="Sad reaction">
+                    <h2 style="color:white; text-shadow: 1px 1px 3px rgba(0,0,0,0.3);">My heart is broken <span class="heart">💔</span></h2>
+                `;
+            } 
+            else if (answer === 'maybe') {
+                resultDiv.innerHTML = `
+                    <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExcDl3b2l1N3R1b2V5dG5tZXF2dWl2eGJ0Z3JmZzV5dGJqYjB1eXJzbiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3o7abAHdYvZdBNnGZq/giphy.gif" alt="Thinking">
+                    <h2 style="color:white; text-shadow: 1px 1px 3px rgba(0,0,0,0.3);">I'll wait for you forever! <span class="heart">⏳❤️</span></h2>
+                `;
+            }
+        }
+    </script>
+</body>
+</html>
